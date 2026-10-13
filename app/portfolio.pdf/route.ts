@@ -8,9 +8,11 @@ import { tryFramedImage } from '@/lib/pdf/images';
 import PortfolioDocument, { BOXES, tileBox, type PortfolioData } from '@/lib/pdf/PortfolioDocument';
 import { profile } from '@/lib/profile';
 
-// Rebuilt at most every 5 minutes, and immediately when the studio saves
-// anything (revalidateSite() in lib/revalidate.ts).
-export const revalidate = 300;
+// Built fresh on every download, so it always matches the site. It's
+// downloaded rarely, and photo fetches can't be cached anyway (often >2 MB).
+export const dynamic = 'force-dynamic';
+// Image processing + rendering takes a few seconds; leave headroom on Vercel.
+export const maxDuration = 30;
 
 const MAX_TILES = 8;
 
