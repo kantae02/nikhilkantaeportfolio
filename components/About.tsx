@@ -69,15 +69,15 @@ export default function About({ index, photo, content }: AboutProps) {
           )}
 
           {details.length > 0 && (
-            <dl className="mt-12 grid grid-cols-1 gap-px overflow-hidden border border-white/5 bg-white/5 sm:grid-cols-2">
+            <dl className="mt-12 grid grid-cols-2 gap-px overflow-hidden border border-white/5 bg-white/5">
               {details.map((item, i) => (
-                <Reveal key={`${item.label}-${i}`} delay={0.15 + i * 0.07} y={20} className="bg-ink px-6 py-5">
-                  <dt className="text-[10px] font-medium uppercase tracking-[0.3em] text-gold">{item.label}</dt>
-                  <dd className="mt-2 text-base font-medium text-white sm:text-lg">{item.value}</dd>
+                <Reveal key={`${item.label}-${i}`} delay={0.15 + i * 0.07} y={20} className="bg-ink px-4 py-4 sm:px-6 sm:py-5">
+                  <dt className="text-[10px] font-medium uppercase tracking-[0.2em] text-gold sm:tracking-[0.3em]">{item.label}</dt>
+                  <dd className="mt-1.5 text-[15px] font-medium leading-snug text-white sm:mt-2 sm:text-lg">{item.value}</dd>
                 </Reveal>
               ))}
               {/* Keep the 2-column grid flush when the count is odd. */}
-              {details.length % 2 === 1 && <div aria-hidden className="hidden bg-ink sm:block" />}
+              {details.length % 2 === 1 && <div aria-hidden className="bg-ink" />}
             </dl>
           )}
 

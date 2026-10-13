@@ -61,7 +61,7 @@ export default function StageBorn({ index, photo, quote, settings }: StageBornPr
           </motion.span>
 
           <motion.blockquote
-            className="-mt-6 text-2xl font-light leading-snug text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.85)] sm:text-4xl lg:text-[2.75rem] lg:leading-[1.3]"
+            className="-mt-6 text-xl font-light leading-snug text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.85)] sm:text-4xl lg:text-[2.75rem] lg:leading-[1.3]"
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: '-100px' }}
